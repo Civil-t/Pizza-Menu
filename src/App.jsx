@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 const pizzaData = [
   {
@@ -47,23 +48,69 @@ const pizzaData = [
 
 function App() {
   return (
-    <>
-      <h1>Hello Form App.jsx</h1>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-    </>
+    <div className="container">
+      <Header />
+      <Menu />
+      <Footer />
+    </div>
   );
 }
 
 export default App;
 
-function Pizza() {
+function Pizza(props) {
   return (
     <div>
-      <img src="../public/starter/pizzas/prosciutto.jpg" alt="prosciutto" />
-      <h2>Pizza Prosciutto</h2>
-      <p>Tomato, mozarella, ham, aragula, and burrata cheese</p>
+      <img src={props.photo} alt={props.name} />
+      <h3>{props.name}</h3>
+      <p>{props.ingredients}</p>
+      <span>{props.price}</span>
     </div>
+  );
+}
+
+function Menu() {
+  return (
+    <div className="menu">
+      <h2>Menu</h2>
+      <Pizza
+        name="Pizza Prosciutto"
+        ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
+        photo="../public/starter/pizzas/prosciutto.jpg"
+        price={18}
+      />
+      <Pizza
+        name="Pizza Salamino"
+        ingredients="Tomato, mozarella, and pepperoni"
+        photo="../public/starter/pizzas/salamino.jpg"
+        price={15}
+      />
+    </div>
+  );
+}
+
+function Header() {
+  return (
+    <header className="header">
+      <h1
+        style={{
+          color: "orangered",
+          fontSize: "48px",
+          textTransform: "uppercase",
+        }}
+      >
+        Taps Pizzaria
+      </h1>
+    </header>
+  );
+}
+
+function Footer() {
+  const hour = new Date().getHours();
+  const open = hour > 8 && hour < 18;
+  console.log(hour, open);
+
+  return (
+    <footer>{new Date().toLocaleTimeString()}. We're currenly open!</footer>
   );
 }
