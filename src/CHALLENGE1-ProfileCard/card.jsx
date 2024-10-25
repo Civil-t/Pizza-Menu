@@ -1,6 +1,39 @@
 import "./cardStyles.css";
 import avatar from "./avatar.jpg";
 
+const skills = [
+  {
+    skill: "HTML+CSS",
+    level: "advanced",
+    color: "#2662EA",
+  },
+  {
+    skill: "JavaScript",
+    level: "advanced",
+    color: "#EFD81D",
+  },
+  {
+    skill: "Web Design",
+    level: "advanced",
+    color: "#C3DCAF",
+  },
+  {
+    skill: "Git and GitHub",
+    level: "intermediate",
+    color: "#E84F33",
+  },
+  {
+    skill: "React",
+    level: "advanced",
+    color: "#60DAFB",
+  },
+  {
+    skill: "Svelte",
+    level: "beginner",
+    color: "#FF3B00",
+  },
+];
+
 export default function Card() {
   return (
     <div className="card">
@@ -34,21 +67,35 @@ function Intro() {
 }
 
 function SkillList() {
+  const skillsObj = skills;
+
   return (
-    <div className="skill-list">
-      <Skill name="CEH" color="red" />
-      <Skill name="SFE" color="maroon" />
-      <Skill name="Relentless" color="darkRed" />
-      <Skill name="Redemption" color="darkOrange" />
-    </div>
+    <>
+      <ul className="skill-list">
+        {skillsObj.map((skill) => (
+          <Skill
+            name={skill.skill}
+            color={skill.color}
+            level={skill.level}
+            key={skill.name}
+          />
+        ))}
+      </ul>
+    </>
   );
 }
 
-function Skill(props) {
+function Skill({ color, name, level }) {
+  //destructured props(color,name,level) from skill object
   return (
     <>
-      <div className="skill" style={{ backgroundColor: props.color }}>
-        {props.name}{" "}
+      <div className="skill" style={{ backgroundColor: color }}>
+        {name}
+        <span>
+          {level === "advanced" && "💪"}
+          {level === "intermediate" && "👍"}
+          {level === "beginner" && "😒"}
+        </span>{" "}
       </div>
     </>
   );
