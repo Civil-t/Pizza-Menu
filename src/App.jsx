@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import Card from "./CHALLENGE1-ProfileCard/card";
+//import Card from "./CHALLENGE1-ProfileCard/card";
 
 const pizzaData = [
   {
@@ -49,12 +49,12 @@ const pizzaData = [
 
 function App() {
   return (
-    <Card />
-    //  <div className="container ">
-    //   <Header />
-    //   <Menu />
-    //   <Footer />
-    // </div>
+    // <Card /> // uncoment to see CHALLENGE 1
+    <div className="container ">
+      <Header />
+      <Menu />
+      <Footer />
+    </div>
   );
 }
 
