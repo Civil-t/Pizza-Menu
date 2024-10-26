@@ -15,7 +15,8 @@ A simple single page react Pizzaria application built from Fundamental React con
 ### Screenshots
 
 ![Main App](./src/images/pizzaria.png)
-![Challenge](./src/images/challenges.png)
+
+<!-- ![Challenge](./src/images/challenges.png) -->
 
 ### Built with
 
