@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
 //import Card from "./CHALLENGE1-ProfileCard/card";
+import InteractiveCard from "./REACT_FUNDAMENTALS_P2_(STATE, EVENTS, FORMS)/interactiveCard";
 
 const pizzaData = [
   {
@@ -50,11 +51,14 @@ const pizzaData = [
 function App() {
   return (
     // <Card /> // uncoment to see CHALLENGE 1
-    <div className="container ">
-      <Header />
-      <Menu />
-      <Footer />
-    </div>
+
+    <InteractiveCard />
+
+    // <div className="container ">
+    //   <Header />
+    //   <Menu />
+    //   <Footer />
+    // </div>
   );
 }
 
