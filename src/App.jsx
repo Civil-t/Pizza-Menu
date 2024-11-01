@@ -1,7 +1,8 @@
 import React from "react";
 import "./index.css";
 //import Card from "./CHALLENGE1-ProfileCard/card";
-import InteractiveCard from "./REACT_FUNDAMENTALS_P2_(STATE, EVENTS, FORMS)/interactiveCard";
+//import InteractiveCard from "./REACT_FUNDAMENTALS_P2_(STATE, EVENTS, FORMS)/interactiveCard";
+import TListApp from "./REACT_FUNDAMENTALS_P2_(STATE, EVENTS, FORMS)/TRAVEL_LIST/TListApp";
 
 const pizzaData = [
   {
@@ -52,8 +53,9 @@ function App() {
   return (
     // <Card /> // uncoment to see CHALLENGE 1
 
-    <InteractiveCard />
+    <TListApp />
 
+    // <InteractiveCard />
     // <div className="container ">
     //   <Header />
     //   <Menu />
